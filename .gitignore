@@ -1,0 +1,9 @@
+/.bundle
+.DS_Store
+rerun.txt
+dump.rdb
+*.tmproj
+/.idea
+.swp
+chromedriver.log
+tags

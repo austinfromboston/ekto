@@ -1,0 +1,33 @@
+GIT
+  remote: git://github.com/ryuzee/sahara.git
+  revision: d22795aa417ec1cb67eb92810afb52300edd3c44
+  specs:
+    sahara (0.0.14)
+      popen4 (~> 0.1.2)
+      thor (> 0.14)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    Platform (0.4.0)
+    diff-lcs (1.2.2)
+    open4 (1.3.0)
+    popen4 (0.1.2)
+      Platform (>= 0.4.0)
+      open4 (>= 0.4.0)
+    rspec (2.13.0)
+      rspec-core (~> 2.13.0)
+      rspec-expectations (~> 2.13.0)
+      rspec-mocks (~> 2.13.0)
+    rspec-core (2.13.1)
+    rspec-expectations (2.13.0)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.13.0)
+    thor (0.18.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rspec
+  sahara!
