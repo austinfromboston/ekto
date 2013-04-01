@@ -4,7 +4,7 @@ module Ekto
     Response = Struct.new(:output, :status)
 
     def initialize(opts)
-
+      @opts = opts
     end
 
     def connect(command)
@@ -40,12 +40,15 @@ module Ekto
     protected 
 
     def exec(cmd)
-      project_root = Pathname.new(File.expand_path(File.dirname(__FILE__) + "../../../"))
-      log "running #{cmd}"
-      response = Response.new *Open3.capture2e(cmd, :chdir=>project_root.join('spec/fixtures/default') )
+      log "running #{cmd} in path #{working_path}"
+      response = Response.new *Open3.capture2e(cmd, :chdir=> working_path)
       log response.output
       log "exited with code #{response.status.exitstatus}\n"
       response
+    end
+
+    def working_path
+      @opts[:working_path] || PROJECT_ROOT.join('spec/fixtures/default')
     end
 
     def log(msg)
