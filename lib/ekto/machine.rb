@@ -13,7 +13,7 @@ module Ekto
 
     def connect!(command)
       connect(command).tap do |response|
-        raise CommandExecutionFailed.new(cmd) unless response.status.success?
+        raise CommandExecutionFailed.new(command) unless response.status.success?
       end
     end
 
